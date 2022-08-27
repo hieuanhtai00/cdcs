@@ -24,7 +24,7 @@ class SendFileBloc extends Bloc<SendFileEvent, SendFileState> {
       String? path = element.path;
 
       // Send file to server
-      UploadFileApi.uploadFile(path!).then((value) {
+      UploadFileApi.uploadFile(path!, counter).then((value) {
         ++counter;
         if (value == true) {
           fileNameMalware.add(element.name);
